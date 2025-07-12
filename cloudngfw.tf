@@ -57,6 +57,25 @@ resource "cloudngfwaws_certificate" "kayana_untrust" {
   audit_comment = "Pushed by Terraform"
 }
 
+resource "cloudngfwaws_ngfw_log_profile" "kayana_log_profile" {
+  ngfw       = cloudngfwaws_ngfw.kayana_poc_cngfw.name
+  account_id = cloudngfwaws_ngfw.kayana_poc_cngfw.account_id
+  log_destination {
+    destination_type = "CloudWatchLogs"
+    destination      = "KayanaCNGFW"
+    log_type         = "TRAFFIC"
+  }
+  log_destination {
+    destination_type = "CloudWatchLogs"
+    destination      = "KayanaCNGFW"
+    log_type         = "THREAT"
+  }
+  log_destination {
+    destination_type = "CloudWatchLogs"
+    destination      = "KayanaCNGFW"
+    log_type         = "DECRYPTION"
+  }
+}
 # =============================================================================
 #  PLAN 2
 # =============================================================================
