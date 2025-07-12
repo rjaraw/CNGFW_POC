@@ -15,6 +15,7 @@ data "terraform_remote_state" "cloudngfw" {
 # Variables - values retrieved from previous Terraform deployment, using the deployment's state as declared above
 locals {
   aws_account     = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.aws_account
+  aws_region      = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.aws_region
   kayana_dev_vpc   = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.kayana_dev_vpc
   kayana_sec_sub_a = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.kayana_sec_sub_a
   kayana_sec_sub_b = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.kayana_sec_sub_b
