@@ -96,7 +96,7 @@ resource "cloudngfwaws_security_rule" "tc_1b_deny" {
   ]
   protocol = "application-default"
   category {}
-  action               = "Deny"
+  action               = "DenySilent"
   decryption_rule_type = "SSLOutboundInspection"
   logging              = true
   audit_comment        = "Pushed by Terraform"
@@ -137,7 +137,7 @@ resource "cloudngfwaws_security_rule" "tc_1c_deny" {
   applications = ["ssh"]
   protocol     = "any"
   category {}
-  action        = "Allow"
+  action        = "DenySilent"
   logging       = true
   audit_comment = "Pushed by Terraform"
 }
@@ -216,7 +216,7 @@ resource "cloudngfwaws_security_rule" "tc_4a" {
   name        = "TestCase4a"
   description = "Evaluate the NGFW’s performance under high traffic conditions."
   source {
-    cidr_block = [data.aws_subnet.kayana_pri_sub_a.cidr_block]
+    cidrs = [data.aws_subnet.kayana_pri_sub_a.cidr_block]
   }
   destination {
     cidrs = [data.aws_subnet.kayana_rds_sub_c.cidr_block]
@@ -247,7 +247,7 @@ resource "cloudngfwaws_security_rule" "deny_poc" {
   protocol     = "any"
   category {
   }
-  action               = "Deny"
+  action               = "DenySilent"
   decryption_rule_type = "SSLOutboundInspection"
   logging              = true
   audit_comment        = "Pushed by Terraform"
@@ -269,7 +269,7 @@ resource "cloudngfwaws_security_rule" "allow_any" {
   protocol     = "any"
   category {
   }
-  action               = "Deny"
+  action               = "Allow"
   decryption_rule_type = "SSLOutboundInspection"
   logging              = true
   audit_comment        = "Pushed by Terraform"
