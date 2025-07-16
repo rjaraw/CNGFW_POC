@@ -17,14 +17,10 @@ provider "cloudngfwaws" {
   lfa_arn          = "arn:aws:iam::506350273566:role/RjApiGatewayFullAccess"
   lra_arn          = "arn:aws:iam::506350273566:role/RjApiGatewayFullAccess"
   json_config_file = "/home/ec2-user/.cloudngfwaws_creds.json"
-  # lfa_arn          = "arn:aws:iam::782483119229:role/cngfw-tf"
-  # lra_arn          = "arn:aws:iam::782483119229:role/cngfw-tf"
-  # json_config_file = "/home/ec2-user/.kayanacngfw_creds.json"
 }
 
 provider "aws" {
   region                   = var.aws_region
   shared_config_files      = ["~/.aws/config"]
   shared_credentials_files = ["~/.aws/credentials"]
-  # shared_credentials_files = ["~/.aws/kayana_creds"]
 }
