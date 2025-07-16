@@ -7,7 +7,7 @@ resource "cloudngfwaws_prefix_list" "kayana_ec2_pl" {
     var.private_server_b_ip,
     var.rds_server_c_ip
   ]
-  audit_comment        = "Pushed by Terraform"
+  audit_comment = "Pushed by Terraform"
 }
 
 resource "cloudngfwaws_custom_url_category" "kayana_url" {

@@ -13,7 +13,7 @@ resource "cloudngfwaws_ngfw" "kayana_poc_cngfw" {
   }
 
   subnet_mapping {
-    availability_zone = "${local.aws_region}c"
+    availability_zone = "${local.aws_region}d"
   }
 
   rulestack = local.kayana_poc_rs

@@ -8,8 +8,8 @@ data "terraform_remote_state" "aws_infra_and_rulestacks" {
 
 # Variables - values retrieved from previous Terraform deployment, using the deployment's state as declared above
 locals {
-  aws_account     = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.aws_account
-  aws_region         = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.aws_region
-  kayana_dev_vpc   = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.kayana_dev_vpc
-  kayana_poc_rs    = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.kayana_poc_rs
+  aws_account    = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.aws_account
+  aws_region     = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.aws_region
+  kayana_dev_vpc = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.kayana_dev_vpc
+  kayana_poc_rs  = data.terraform_remote_state.aws_infra_and_rulestacks.outputs.kayana_poc_rs
 }

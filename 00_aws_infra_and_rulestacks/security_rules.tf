@@ -10,12 +10,11 @@ resource "cloudngfwaws_security_rule" "aws_ssm" {
   destination {
     cidrs = ["15.221.8.0/21", "52.119.184.0/22", "10.0.0.0/24"]
   }
-  applications = ["any"]
-  protocol = "tcp"
-  prot_port_list = ["443"]
+  applications   = ["any"]
+  prot_port_list = ["TCP:443"]
   category {}
   action               = "Allow"
-  decryption_rule_type = "SSLOutboundInspection"
+  # decryption_rule_type = "SSLOutboundInspection"
   logging              = true
   audit_comment        = "Pushed by Terraform"
 }
@@ -34,6 +33,9 @@ resource "cloudngfwaws_security_rule" "tc_1a" {
   }
   applications = [
     "ssl",
+    "git",
+    "ssh",
+    "web-browsing",
     "github",
     "github-downloading",
     "github-copilot",
@@ -64,6 +66,7 @@ resource "cloudngfwaws_security_rule" "tc_1b" {
   }
   applications = [
     "ssl",
+    "websocket",
     "openai-chatgpt",
     "openai",
     "openai-api"

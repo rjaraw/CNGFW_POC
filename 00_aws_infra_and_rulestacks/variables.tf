@@ -8,20 +8,14 @@ variable "aws_account" {
   type        = string
 }
 
-variable "forward_trust_arn" {
-  description = "Forward Trust Certificate ARN"
-  type        = string
-}
-
-variable "forward_untrust_arn" {
-  description = "Forward Untrust Certificate ARN"
-  type        = string
-}
-
-# variable "root_cert_arn" {
-#   description = "Root Certificate ARN"
+# variable "forward_trust_arn" {
+#   description = "Forward Trust Certificate ARN"
 #   type        = string
-#   default     = ""
+# }
+
+# variable "forward_untrust_arn" {
+#   description = "Forward Untrust Certificate ARN"
+#   type        = string
 # }
 
 variable "private_server_a_ip" {

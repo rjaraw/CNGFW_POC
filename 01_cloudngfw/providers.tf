@@ -13,4 +13,7 @@ provider "cloudngfwaws" {
   lfa_arn          = "arn:aws:iam::506350273566:role/RjApiGatewayFullAccess"
   lra_arn          = "arn:aws:iam::506350273566:role/RjApiGatewayFullAccess"
   json_config_file = "/home/ec2-user/.cloudngfwaws_creds.json"
+  # lfa_arn          = "arn:aws:iam::782483119229:role/cngfw-tf"
+  # lra_arn          = "arn:aws:iam::782483119229:role/cngfw-tf"
+  # json_config_file = "/home/ec2-user/.kayanacngfw_creds.json"
 }
