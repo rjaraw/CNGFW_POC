@@ -1,6 +1,6 @@
 aws_region   = "ap-southeast-1"
 aws_account  = "430118856206"
-vpc_id       = "ypc-Oefcfd31cb444e9fd"
+vpc_id       = "vpc-Oefcfd31cb444e9fd"
 cngfw_name   = "KayanaDataDev"
 sec_a_sub_id = "subnet-04155b708d66ff8c5"
 sec_b_sub_id = "subnet-Oe4efa5b25e62b4b1"
