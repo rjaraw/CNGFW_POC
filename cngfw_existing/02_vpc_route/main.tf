@@ -1,4 +1,35 @@
-# private and rds subnets default route via GWLB endpoints
+# Import existing VPC routes
+import {
+  to = aws_route.def_rt_private_sub_a
+  id = "${var.private_route_table_a_id}_0.0.0.0/0"
+}
+
+import {
+  to = aws_route.def_rt_private_sub_b
+  id = "${var.private_route_table_b_id}_0.0.0.0/0"
+}
+
+import {
+  to = aws_route.def_rt_private_sub_c
+  id = "${var.private_route_table_c_id}_0.0.0.0/0"
+}
+
+import {
+  to = aws_route.def_rt_rds_sub_a
+  id = "${var.rds_route_table_a_id}_0.0.0.0/0"
+}
+
+import {
+  to = aws_route.def_rt_rds_sub_b
+  id = "${var.rds_route_table_b_id}_0.0.0.0/0"
+}
+
+import {
+  to = aws_route.def_rt_rds_sub_c
+  id = "${var.rds_route_table_c_id}_0.0.0.0/0"
+}
+
+# Modify private and rds subnets default route via GWLB endpoints
 resource "aws_route" "def_rt_private_sub_a" {
   route_table_id         = var.private_route_table_a_id
   destination_cidr_block = "0.0.0.0/0"
@@ -35,7 +66,7 @@ resource "aws_route" "def_rt_rds_sub_c" {
   vpc_endpoint_id        = local.kayana_cngfw_ep_c
 }
 
-# tgw subnet return route to private and rds subnets via Cloud NGFW Endpoints
+# Create tgw subnet return route to private and rds subnets via Cloud NGFW Endpoints
 resource "aws_route" "tgw_to_private_a" {
   route_table_id         = var.tgw_route_table_id
   destination_cidr_block = data.aws_subnet.private_sub_a.cidr_block

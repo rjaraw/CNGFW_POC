@@ -55,27 +55,27 @@ variable "private_subnet_c_id" {
   type = string
 }
 
-variable "private_dslab_sub_a_id" {
+variable "private_dslab_subnet_a_id" {
   type = string
 }
 
-variable "private_dslab_sub_b_id" {
+variable "private_dslab_subnet_b_id" {
   type = string
 }
 
-variable "private_dslab2_sub_a_id" {
+variable "private_dslab2_subnet_a_id" {
   type = string
 }
 
-variable "private_dslab2_sub_b_id" {
+variable "private_dslab2_subnet_b_id" {
   type = string
 }
 
-variable "private_c360_sub_a_id" {
+variable "private_c360_subnet_a_id" {
   type = string
 }
 
-variable "private_c360_sub_b_id" {
+variable "private_c360_subnet_b_id" {
   type = string
 }
 

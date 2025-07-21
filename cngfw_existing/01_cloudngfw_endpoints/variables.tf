@@ -18,17 +18,22 @@ variable "cngfw_name" {
   type        = string
 }
 
-variable "sec_a_sub_id" {
+variable "sec_sub_a_cidr" {
   description = "The ID of the subnet for endpoint A."
   type        = string
 }
 
-variable "sec_b_sub_id" {
+variable "sec_sub_b_cidr" {
   description = "The ID of the subnet for endpoint B."
   type        = string
 }
 
-variable "sec_c_sub_id" {
+variable "sec_sub_c_cidr" {
   description = "The ID of the subnet for endpoint C."
+  type        = string
+}
+
+variable "tgw_id" {
+  description = "The ID of the Transit Gateway."
   type        = string
 }
