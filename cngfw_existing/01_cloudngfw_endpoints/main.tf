@@ -1,26 +1,26 @@
 # Create security subnets for Cloud NGFW Endpoints
 resource "aws_subnet" "sec_sub_a" {
-  vpc_id                  = var.vpc_id
-  cidr_block              = var.sec_sub_a_cidr
-  availability_zone       = "${var.aws_region}a"
+  vpc_id            = var.vpc_id
+  cidr_block        = var.sec_sub_a_cidr
+  availability_zone = "${var.aws_region}a"
   tags = {
     Name = "sec-subnet-a"
   }
 }
 
 resource "aws_subnet" "sec_sub_b" {
-  vpc_id                  = var.vpc_id
-  cidr_block              = var.sec_sub_b_cidr
-  availability_zone       = "${var.aws_region}b"
+  vpc_id            = var.vpc_id
+  cidr_block        = var.sec_sub_b_cidr
+  availability_zone = "${var.aws_region}b"
   tags = {
     Name = "sec-subnet-b"
   }
 }
 
 resource "aws_subnet" "sec_sub_c" {
-  vpc_id                  = var.vpc_id
-  cidr_block              = var.sec_sub_c_cidr
-  availability_zone       = "${var.aws_region}c"
+  vpc_id            = var.vpc_id
+  cidr_block        = var.sec_sub_c_cidr
+  availability_zone = "${var.aws_region}c"
   tags = {
     Name = "sec-subnet-c"
   }
@@ -30,7 +30,7 @@ resource "aws_route_table" "sec_rt" {
   vpc_id = var.vpc_id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block         = "0.0.0.0/0"
     transit_gateway_id = var.tgw_id
   }
 
